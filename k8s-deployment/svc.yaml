@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: case-service
 spec:
+  type: NodePort
   selector:
     app: java-app
   ports:
