@@ -53,7 +53,7 @@ Vagrant.configure(2) do |config|
 		node2.vm.network "private_network", ip: "192.168.56.122"
 		node2.vm.provider "virtualbox" do |v|
 			v.customize [ "modifyvm", :id, "--cpus", "2" ]
-			v.customize [ "modifyvm", :id, "--memory", "2000" ]
+			v.customize [ "modifyvm", :id, "--memory", "3000" ]
 		end
 		#config.vm.provision :shell, :inline => ansible
 		config.vm.provision :shell, :inline => common
@@ -66,7 +66,7 @@ Vagrant.configure(2) do |config|
 		node3.vm.network "private_network", ip: "192.168.56.123"
 		node3.vm.provider "virtualbox" do |v|
 			v.customize [ "modifyvm", :id, "--cpus", "2" ]
-			v.customize [ "modifyvm", :id, "--memory", "2000" ]
+			v.customize [ "modifyvm", :id, "--memory", "3000" ]
 		end
 		#config.vm.provision :shell, :inline => ansible
 		config.vm.provision :shell, :inline => common
