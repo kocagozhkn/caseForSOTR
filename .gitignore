@@ -1,0 +1,20 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# Package Files
+*.jar
+*.zip
+*.tar.gz
+*.rar
+
+# Generated Sources
+target
+
+# IDE Files
+.idea
+
+#vagrant
+.vagrant
