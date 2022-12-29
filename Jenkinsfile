@@ -32,7 +32,7 @@ podTemplate(yaml: '''
         DATE = new Date().format('yy.M')
         TAG = "${DATE}.${BUILD_NUMBER}"
     }
-   stage('Get a Maven project') {
+   stage('Get Maven project') {
             git url: 'https://github.com/kocagozhkn/caseForSOTR.git', branch: 'main'
             container('maven') {
                 stage('Build a Maven project') {
@@ -43,7 +43,7 @@ podTemplate(yaml: '''
             }
         }
 
-        stage('Build Java Image') {
+        stage('Build Java Image and Push Repo') {
             container('kaniko') {
                 stage('Build a Maven project') {
                     sh '''
