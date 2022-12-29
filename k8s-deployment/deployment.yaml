@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: java-app
-        image: kocagoz/hello-case:14
+        image: kocagoz/hello-case:15
         ports:
         - containerPort: 8080
       imagePullPolicy: Always
