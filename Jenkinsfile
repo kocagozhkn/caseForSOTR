@@ -1,49 +1,72 @@
-pipeline {
-    agent any
-    tools {
-        maven 'Maven3'
-      
-    }
-    environment {
+podTemplate(yaml: '''
+    apiVersion: v1
+    kind: Pod
+    spec:
+      containers:
+      - name: maven
+        image: maven:3.8.1-jdk-8
+        command:
+        - sleep
+        args:
+        - 99d
+      - name: kaniko
+        image: gcr.io/kaniko-project/executor:debug
+        command:
+        - sleep
+        args:
+        - 9999999
+        volumeMounts:
+        - name: kaniko-secret
+          mountPath: /kaniko/.docker
+      restartPolicy: Never
+      volumes:
+      - name: kaniko-secret
+        secret:
+            secretName: dockercred
+            items:
+            - key: .dockerconfigjson
+              path: config.json
+''') {
+    node(POD_LABEL) {
+        environment {
         DATE = new Date().format('yy.M')
         TAG = "${DATE}.${BUILD_NUMBER}"
     }
-    stages {
-        
-        stage("Git Checkout"){
-            steps {
-                git branch: 'main',url:"https://github.com/kocagozhkn/case-vdfn"
-            }
-        }
-        
-        stage ('Build') {
-            steps {
-                sh 'mvn clean package'
-                
-            }
-        }
-        
-        stage('Docker Build') {
-            steps {
-                script {
-                    docker.build("kocagoz/case-vdfn:${TAG}")
+   stage('Get a Maven project') {
+            git url: 'https://github.com/kocagozhkn/caseForSOTR.git', branch: 'main'
+            container('maven') {
+                stage('Build a Maven project') {
+                    sh '''
+           mvn clean package
+          '''
                 }
             }
         }
-	    stage('Pushing Docker Image to Dockerhub') {
-            steps {
-                script {
-                    docker.withRegistry('https://registry.hub.docker.com', 'docker_credential') {
-                       
-                        docker.image("kocagoz/case-vdfn:${TAG}").push("latest")
-                    }
+
+        stage('Build Java Image') {
+            container('kaniko') {
+                stage('Build a Maven project') {
+                    sh '''
+                    
+            /kaniko/executor --context `pwd` --destination=kocagoz/hello-case:${BUILD_NUMBER}
+          '''
                 }
             }
         }
-       stage('Deployment') {
-            steps {
-            sh 'kubectl --insecure-skip-tls-verify apply -f ./k8s-deployment'
-            sh 'kubectl rollout restart deployment'
+        stage('Update GIT') {
+            git url: 'https://github.com/kocagozhkn/caseForSOTR.git', branch: 'main'
+            catchError(buildResult:'SUCCESS', stageResult:'FAILURE') {
+                withCredentials([usernamePassword(credentialsId:'github', passwordVariable:'GIT_PASSWORD', usernameVariable:'GIT_USERNAME')]) {
+                    sh "git config user.email kocagoz@gmail.com"
+                    sh "git config user.name Hakan"
+                    
+                    sh "cat ./k8s-deployment/deployment.yaml"
+                    sh "sed -i.back '/image:/s/:[0-9].*/:${env.BUILD_NUMBER}/g' ./k8s-deployment/deployment.yaml"
+                    sh "cat ./k8s-deployment/deployment.yaml"
+                    sh "git add ."
+                    sh "git commit -m 'Done by Jenkins Job'"
+                    sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/caseForSOTR.git"
+                }  
             }
         }
     }
