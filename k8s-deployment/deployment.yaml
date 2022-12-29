@@ -16,7 +16,7 @@ spec:
     spec:
       containers:      
       - name: java-app
-        image: kocagoz/hello-case:14
+        image: kocagoz/hello-case:16
         resources:
           requests:
             memory: "256Mi"
@@ -31,13 +31,13 @@ spec:
           httpGet:
             path: /actuator/health/liveness
             port: 8080
-          initialDelaySeconds: 5
+          initialDelaySeconds: 30
           periodSeconds: 10
         readinessProbe:
           httpGet:
             path: /actuator/health/readiness
             port: 8080
-          initialDelaySeconds: 5
+          initialDelaySeconds: 30
           periodSeconds: 10
         ports:
         - containerPort: 8080
