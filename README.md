@@ -43,6 +43,7 @@ Tech Stack
   <img src="https://avatars.githubusercontent.com/u/1507452?s=200&v=4" width=60>
   <img src="https://avatars.githubusercontent.com/u/5429470?s=280&v=4" width=80>
    <img src="https://static-00.iconduck.com/assets.00/kubernetes-color-icon-256x256-t8ualzkj.png" width=50>
+     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jenkins_logo.svg/1200px-Jenkins_logo.svg.png" width=40>
 
 </p>
 
@@ -61,8 +62,8 @@ Tech Stack
 <p align="center">
  
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Apache_Maven_logo.svg/2560px-Apache_Maven_logo.svg.png" width=80>
-  <img src="https://sue.eu/wp-content/uploads/sites/6/2022/07/jenkins-logo-920x920-sue-v02.png" width=80>
-    <img src="https://miro.medium.com/max/1400/0*u3F5ndHj_h8SuKVe.png" width=80>
+
+<img src="https://miro.medium.com/max/1400/0*u3F5ndHj_h8SuKVe.png" width=80>
   
      
 </p>
