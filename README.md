@@ -2,8 +2,11 @@ CI/CD SPRING BOOT PIPELINE PROJECT
 <p align="center">
 <b>ENVIRONMENT</b>
 </p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/kocagozhkn/caseForSOTR/main/images/media/image01.png" width=50% height=50%>
 
-<img src="https://raw.githubusercontent.com/kocagozhkn/caseForSOTR/main/images/media/image001.png" width=50% height=50%>
+</p>
+
 <p align="center">
 <b>PIPELINE</b>
 </p>
