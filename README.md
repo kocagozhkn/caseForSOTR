@@ -3,7 +3,7 @@ CI/CD SPRING BOOT PIPELINE PROJECT
 <b>ENVIRONMENT</b>
 </p>
 
-![](./images/media/image01.png | width=100)
+<img src="https://raw.githubusercontent.com/kocagozhkn/caseForSOTR/main/images/media/image001.png" width=50% height=50%>
 <p align="center">
 <b>PIPELINE</b>
 </p>
