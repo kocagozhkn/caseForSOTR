@@ -19,46 +19,53 @@
 </p>
 
 In this project we will build spring boot hello world app, with Jenkins,
-it deploy to k8s cluster which is based on oracle virtual platform.
+it deploy to k8s cluster with argoCD which is deployed on oracle virtual platform.
 
+**stage-1**
 When jenkins build triggered it will download source code from github
-and build it with maven and create artifact which is a jar file, after
-second phase kaniko will build docker image according to Dockerfile, when
-the build finishes third phase will begin tagging and pushing image to
-DockerHub again with kaniko.
+and build it with maven and create artifact which is a jar file, 
 
-Last phase is kubernetes deploy, when build and push succesfuly
+**stage-2**
+Second stage kaniko will build docker image according to Dockerfile, and when
+the build finishes kaniko will begin tagging and pushing image to
+DockerHub.
+
+**stage-3**
+Last stage is kubernetes deploy, when build and push succesfuly
 finished, Jenkins will change the image tag in deployment file which
 located in github repo, then argocd will be triggered from that change
-and will start to deployment.
+and will start to deployment new version of deployment.
 
 Tech Stack
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Vagrant.png" width=50>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Virtualbox_logo.png" width=60>
+  <img src="https://avatars.githubusercontent.com/u/1507452?s=200&v=4" width=60>
+  <img src="https://avatars.githubusercontent.com/u/5429470?s=280&v=4" width=80>
+   <img src="https://static-00.iconduck.com/assets.00/kubernetes-color-icon-256x256-t8ualzkj.png" width=50>
 
--   Vagrant
+</p>
 
--   Oracle Virtual Box
 
--   Ansible
+<p align="center">
+ 
 
--   Docker
+<img src="https://cncf-branding.netlify.app/img/projects/argo/icon/color/argo-icon-color.png" width=70>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Logo-ubuntu_cof-orange-hex.svg/1200px-Logo-ubuntu_cof-orange-hex.svg.png" width=70>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQskALxpNXUNt7naftdZ77u66lQ1oQft4nwt3jpd2U&s" width=70>
+          <img src="https://git-scm.com/images/logos/logomark-black@2x.png" width=80>
+      <img src="https://i.pinimg.com/736x/27/42/47/274247632a09f3a7750c2c6f43de403a.jpg" width=70>
 
--   Kubernetes
-
--   Maven
-
--   Jenkins
-
--   Kaniko
-
--   ArgoCD
-
--   Git
-
--   Linux Ubuntu
-
--   Spring
-
--   Helm
+     
+</p>
+<p align="center">
+ 
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Apache_Maven_logo.svg/2560px-Apache_Maven_logo.svg.png" width=80>
+  <img src="https://sue.eu/wp-content/uploads/sites/6/2022/07/jenkins-logo-920x920-sue-v02.png" width=80>
+    <img src="https://miro.medium.com/max/1400/0*u3F5ndHj_h8SuKVe.png" width=80>
+  
+     
+</p>
 
 **Phase 1 -- Setup Virtual Environment**
 
