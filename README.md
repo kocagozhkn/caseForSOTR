@@ -6,7 +6,7 @@
 <b>ENVIRONMENT</b>
 </p>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/kocagozhkn/caseForSOTR/main/images/media/image01.png" width=50% height=50%>
+  <img src="https://raw.githubusercontent.com/kocagozhkn/caseForSOTR/main/images/media/image01.png" width=60% height=60%>
 
 </p>
 
@@ -14,7 +14,7 @@
 <b>PIPELINE</b>
 </p>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/kocagozhkn/caseForSOTR/main/images/media/image001.png" width=50% height=50%>
+  <img src="https://raw.githubusercontent.com/kocagozhkn/caseForSOTR/main/images/media/image001.png" width=60% height=60%>
 
 </p>
 
@@ -347,7 +347,7 @@ Now its time to check our spring app from browser, we used **nodeport 300055**,
 ![metin içeren bir resim Açıklama otomatik olarak
 oluşturuldu](./images/media/image37.png)
 
-its working, thank your for reading. :)
+its working, thank your for reading. :thumbsup:
 
 
 
