@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: java-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/kocagozhkn/caseForSOTR.git
+    targetRevision: HEAD
+    path: k8s-deployment
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
