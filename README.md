@@ -1,4 +1,7 @@
-CI/CD SPRING BOOT PIPELINE PROJECT
+
+<p align="center">
+<b>CI/CD SPRING BOOT PIPELINE PROJECT</b>
+</p>
 <p align="center">
 <b>ENVIRONMENT</b>
 </p>
@@ -10,8 +13,11 @@ CI/CD SPRING BOOT PIPELINE PROJECT
 <p align="center">
 <b>PIPELINE</b>
 </p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/kocagozhkn/caseForSOTR/main/images/media/image001.png" width=50% height=50%>
 
-![](./images/media/image001.png)
+</p>
+
 In this project we will build spring boot hello world app, with Jenkins,
 it deploy to k8s cluster which is based on oracle virtual platform.
 
