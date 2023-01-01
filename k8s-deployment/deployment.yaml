@@ -14,11 +14,6 @@ spec:
       labels:
         app: java-app
     spec:
-      strategy:
-        blueGreen:
-          activeService: case-service-active
-          previewService: case-service-preview
-          autoPromotionEnabled: false
       containers:      
       - name: java-app
         image: kocagoz/hello-case:16
@@ -46,5 +41,9 @@ spec:
           periodSeconds: 10
         ports:
         - containerPort: 8080
-      
+      strategy:
+        blueGreen:
+          activeService: case-service-active
+          previewService: case-service-preview
+          autoPromotionEnabled: false
       
