@@ -15,14 +15,10 @@ spec:
         app: java-app
     spec:
       strategy:
-        canary:
-          steps:
-          - setWeight: 20
-          - pause:
-            duration: "30s"
-          - setWeight: 50
-          - pause:
-            duration: "30s"
+        blueGreen:
+          activeService: case-service-active
+          previewService: case-service-preview
+          autoPromotionEnabled: false
       containers:      
       - name: java-app
         image: kocagoz/hello-case:16
