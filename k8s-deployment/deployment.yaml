@@ -41,9 +41,9 @@ spec:
           periodSeconds: 10
         ports:
         - containerPort: 8080
-      strategy:
-        blueGreen:
-          activeService: case-service-active
-          previewService: case-service-preview
-          autoPromotionEnabled: false
+  strategy:
+    blueGreen:
+      activeService: case-service-active
+      previewService: case-service-preview
+      autoPromotionEnabled: false
       
