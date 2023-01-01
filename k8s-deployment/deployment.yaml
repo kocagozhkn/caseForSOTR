@@ -1,5 +1,5 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout 
 metadata:
   name: case-deployment
   labels:
@@ -14,6 +14,15 @@ spec:
       labels:
         app: java-app
     spec:
+      strategy:
+        canary:
+          steps:
+          - setWeight: 20
+          - pause:
+            duration: "30s"
+          - setWeight: 50
+          - pause:
+            duration: "30s"
       containers:      
       - name: java-app
         image: kocagoz/hello-case:16
