@@ -319,7 +319,7 @@ We need to create argo project for our deployment.
 ![](./images/media/image39.png)
 
 
-We will enter argo and create new project
+We will enter argo via browser.
 
 ![](./images/media/image35.png)
 
@@ -335,12 +335,14 @@ oluşturuldu](./images/media/image36.png)
 Now we can install argo cd roolout plugin accrding to link ``https://argoproj.github.io/argo-rollouts/installation/``
 
 check argocd rollout cli is working.
+
 `` kubectl argo rollouts version``
 
 ```kubectl-argo-rollouts: v1.3.2+f780534```
 
 
 cli is working, check rollout status current app.
+
 ``kubectl argo rollouts get rollout case-deployment``
 
 ![](./images/media/image41.png)
