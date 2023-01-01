@@ -24,4 +24,4 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8080
-      nodePort: 30055
+      nodePort: 30056
