@@ -16,7 +16,7 @@ spec:
     spec:
       containers:      
       - name: java-app
-        image: kocagoz/hello-case:18
+        image: kocagoz/hello-case:19
         resources:
           requests:
             memory: "256Mi"
