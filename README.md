@@ -364,6 +364,7 @@ To make new **roolout** we will start our **jenkins job** and it will change **i
 ![](./images/media/image43.png)
 
 :thumbsup: blue version is working, now promote new version via. 
+
 ``kubectl argo rollouts promote case-deployment``
 
 ``rollout 'case-deployment' promoted``
