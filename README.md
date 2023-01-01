@@ -337,14 +337,8 @@ Now we can install argo cd roolout plugin accrding to link ``https://argoproj.gi
 check argocd rollout cli is working.
 `` kubectl argo rollouts version``
 
-``kubectl-argo-rollouts: v1.3.2+f780534
-  BuildDate: 2022-12-15T16:01:35Z
-  GitCommit: f780534ebd66a4047c813ddd7841be93b122c3e6
-  GitTreeState: clean
-  GoVersion: go1.18.9
-  Compiler: gc
-  Platform: linux/amd64``
-  
+```kubectl-argo-rollouts: v1.3.2+f780534```
+
 
 cli is working, check rollout status current app.
 ``kubectl argo rollouts get rollout case-deployment``
@@ -369,7 +363,7 @@ To make new **roolout** we will start our **jenkins job** and it will change **i
 
 ![](./images/media/image43.png)
 
-:thumbsup: blue version is working, now promote new version via 
+:thumbsup: blue version is working, now promote new version via. 
 ``kubectl argo rollouts promote case-deployment``
 
 ``rollout 'case-deployment' promoted``
