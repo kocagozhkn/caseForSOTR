@@ -192,7 +192,7 @@ oluşturuldu](./images/media/image15.png)
 
 We are checking helm installation with ``helm version``
 
-**Phase 4 -- Installing Jenkins with helm and installing kubernetes
+**Phase 5 -- Installing Jenkins with helm and installing kubernetes
 plugin to Jenkins.**
 
 ``helm repo add jenkins https://charts.jenkins.io``
@@ -250,7 +250,7 @@ Freestyle Jenkins job finishes succesfully
 ![metin içeren bir resim Açıklama otomatik olarak
 oluşturuldu](./images/media/image25.png)
 
-**Phase 4 -- Writing pipeline and checking kaniko as a kubernetes pod**
+**Phase 6 -- Writing pipeline and checking kaniko as a kubernetes pod**
 
 Firs we will create docker secret at kubernetes to pull our images from
 docker hub.
@@ -293,7 +293,7 @@ When we run pipeline job we get **succses* message and image pushed to
 ![metin içeren bir resim Açıklama otomatik olarak
 oluşturuldu](./images/media/image32.png)
 
-**Phase 5 -- Installing argocd and writing deployment yaml files.**
+**Phase 7 -- Installing argocd and writing deployment yaml files.**
 
 First we will install argocd
 
