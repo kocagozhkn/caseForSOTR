@@ -8,6 +8,9 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
+  
+variables:
+  imageName: "caseForSOTR"
 
 steps:
 - task: Maven@3
@@ -20,3 +23,10 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+- task: Docker@2
+  displayName: Building Image
+  inputs:
+    repository: $(imageName)
+    command: build
+    Dockerfile: Dockerfile
+
